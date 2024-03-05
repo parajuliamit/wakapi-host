@@ -12,12 +12,12 @@ services:
       - wakapi-data:/data
 
   cloudflare:
-    image: amit/cloudflared
+    image: my-cloudflared
     command: tunnel --no-autoupdate run --token ${TUNNEL_AUTH}
     depends_on:
       - wakapi
     restart: always
-    
+
 
 volumes:
   wakapi-data:
